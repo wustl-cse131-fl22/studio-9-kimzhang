@@ -2,23 +2,30 @@ package assignment7;
 
 //TODO: Copy a working Student class from Assignment 7 over this file.
 public class Student {
+	
+	private String firstName, lastName;
+	private int id;
+	private double bearBucksBalance;
+	
 	public Student(String firstName, String lastName, int id) {
-		throw new RuntimeException("TODO: Copy a working Student class from Assignment 7 over this file.");
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.id = id;
 	}
 
 	public String getFullName() {
-		throw new RuntimeException("TODO: Copy a working Student class from Assignment 7 over this file.");
+		return this.firstName + " " + this.lastName; 
 	}
 
 	public int getId() {
-		throw new RuntimeException("TODO: Copy a working Student class from Assignment 7 over this file.");
+		return this.id; 
 	}
 
 	public void depositBearBucks(double amount) {
-		throw new RuntimeException("TODO: Copy a working Student class from Assignment 7 over this file.");
+		bearBucksBalance += amount;
 	}
 
 	public double getBearBucksBalance() {
-		throw new RuntimeException("TODO: Copy a working Student class from Assignment 7 over this file.");
+		return this.bearBucksBalance;
 	}
 }
