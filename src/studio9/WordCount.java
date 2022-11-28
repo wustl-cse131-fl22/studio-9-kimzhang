@@ -30,28 +30,14 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 		Map<String, Integer> countWords = new HashMap<>();
 		int y = 0;
-		countWords.put("to", 0);
-		countWords.put("be", 0);
-		countWords.put("or", 0);
-		countWords.put("not", 0);
-
-//		for(String x: words) {
-//			if (x.equals("to")||x.equals("be")) {
-//				y = 2;
-//			}
-//			else if (x.equals("or")||x.equals("not")) {
-//				y = 1;
-//			}
-//			countWords.put(x, y);
-//		}
-		for (String x : countWords.keySet()) {
-			for (String z : words) {
-				if (x.equals(z)) {
-					y++;
-				}
+		for(String x: words) {
+			if(countWords.get(x)==null) {
+				countWords.put(x, 1);
 			}
-			countWords.replace(x, 0, y);
-			y = 0;
+			else {
+				y = countWords.get(x);
+				countWords.replace(x, y, y+1);
+			}
 		}
 		return countWords;
 	}
